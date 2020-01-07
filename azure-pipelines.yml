@@ -20,27 +20,36 @@ stages:
         action: 'bake'
         helmChart: 'stable/aerospike'
 
-    - publish: $(bake.manifestsBundle)
-      artifact: bakedfiles
+    - task: KubernetesManifest@0
+      inputs:
+        action: 'deploy'
+        kubernetesServiceConnection: 'divman-default'
+        strategy: 'canary'
+        percentage: '50'
+        manifests: $(bake.manifestsBundle)
+        timeout: '0'
 
-- stage: Deploy
-  displayName: 'Deployment stage'
+    # - publish: $(bake.manifestsBundle)
+    #   artifact: bakedfiles
 
-  jobs:
-  - deployment: Deploy
-    displayName: Deploy
+# - stage: Deploy
+#   displayName: 'Deployment stage'
 
-    environment: 'divman-env.default'
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - task: KubernetesManifest@0
-            inputs:
-              action: 'deploy'
-              kubernetesServiceConnection: 'divman-default'
-              strategy: 'canary'
-              percentage: '50'
-              manifests: '$(Pipeline.Workspace)/bakedfiles'
-              timeout: '0'
+#   jobs:
+#   - deployment: Deploy
+#     displayName: Deploy
+
+#     environment: 'divman-env.default'
+#     strategy:
+#       runOnce:
+#         deploy:
+#           steps:
+#           - task: KubernetesManifest@0
+#             inputs:
+#               action: 'deploy'
+#               kubernetesServiceConnection: 'divman-default'
+#               strategy: 'canary'
+#               percentage: '50'
+#               manifests: '$(Pipeline.Workspace)/bakedfiles'
+#               timeout: '0'
               
