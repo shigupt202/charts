@@ -18,7 +18,7 @@ stages:
       name: bake
       inputs:
         action: 'bake'
-        helmChart: 'stable/aerospike'
+        helmChart: 'stable/burrow'
 
     # - task: KubernetesManifest@0
     #   inputs:
