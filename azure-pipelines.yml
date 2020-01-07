@@ -19,7 +19,7 @@ stages:
         action: 'bake'
         helmChart: 'stable/aerospike'
 
-    - publish: $(manifestsBundle)
+    - publish: $(bake.manifestsBundle)
       artifact: bakedfiles
 
 - stage: Deploy
