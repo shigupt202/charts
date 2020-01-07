@@ -16,8 +16,8 @@ stages:
         action: 'bake'
         helmChart: 'stable/aerospike'
 
-    - publish: bakedmanifests
-      artifact: bakedmanifests
+    - publish: $(System.DefaultWorkingDirectory)/bin/bakedfiles
+      artifact: bakedfiles
 
 - stage: Deploy
   displayName: 'Deployment stage'
@@ -37,6 +37,6 @@ stages:
               kubernetesServiceConnection: 'divman-default'
               strategy: 'canary'
               percentage: '50'
-              manifests: '$(Pipeline.Workspace)/bakedmanifests'
+              manifests: '$(System.DefaultWorkingDirectory)/bin/bakedfiles'
               timeout: '0'
               
