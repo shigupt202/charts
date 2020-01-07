@@ -14,7 +14,7 @@ stages:
     - task: KubernetesManifest@0
       inputs:
         action: 'bake'
-        helmChart: 'stable/airflow'
+        helmChart: 'stable/aerospike'
 
     - publish: bakedmanifests
       artifact: bakedmanifests
