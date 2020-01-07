@@ -2,6 +2,9 @@ trigger: none
 
 pool: Hosted Ubuntu 1604
 
+variables:
+  system.debug: true
+
 stages:
 - stage: Build
   displayName: Build stage
