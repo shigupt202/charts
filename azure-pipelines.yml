@@ -47,11 +47,11 @@ stages:
           steps:
           - task: KubernetesManifest@0
             inputs:
-              action: 'deploy'
+              action: $(strategy.action)
               kubernetesServiceConnection: 'divman-default'
               strategy: 'canary'
               trafficSplitMethod: 'smi'
-              percentage: '50'
+              percentage: $(strategy.increment)
               baselineAndCanaryReplicas: '1'
               manifests: '$(Pipeline.Workspace)/bakedfiles/*'
               
