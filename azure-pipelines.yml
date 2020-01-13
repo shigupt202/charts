@@ -50,9 +50,8 @@ stages:
               action: $(strategy.action)
               kubernetesServiceConnection: 'divman-default'
               strategy: 'canary'
-              trafficSplitMethod: 'smi'
+              trafficSplitMethod: 'pod'
               percentage: $(strategy.increment)
-              baselineAndCanaryReplicas: '1'
               manifests: '$(Pipeline.Workspace)/bakedfiles/*'
               
               
