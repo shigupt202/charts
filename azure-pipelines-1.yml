@@ -17,7 +17,7 @@ stages:
     - task: KubernetesManifest@0
       inputs:
         action: 'bake'
-        helmChart: 'Application/charts/sampleapp'
+        helmChart: 'stable/cerebro'
 
     - publish: bakedmanifests
       artifact: bakedmanifests
