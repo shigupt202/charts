@@ -31,7 +31,8 @@ stages:
 
     environment: 'divman-env.default'
     strategy:
-      runOnce:
+      canary:
+        increments: [25,50]        
         deploy:
           steps:
           - task: KubernetesManifest@0
