@@ -42,6 +42,6 @@ stages:
               kubernetesServiceConnection: 'divman-default'
               strategy: $(strategy.name)
               percentage: $(strategy.increment)
-              manifests: '$(Pipeline.Workspace)/bakedmanifests'
+              manifests: '$(Pipeline.Workspace)/bakedmanifests/*'
               timeout: '0'
               
