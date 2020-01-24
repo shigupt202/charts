@@ -37,7 +37,7 @@ stages:
         deploy:
           steps:
           - task: KubernetesManifest@0
-            inputs:
+            inputs:                       
               action: $(strategy.action)
               kubernetesServiceConnection: 'divman-default'
               strategy: $(strategy.name)
