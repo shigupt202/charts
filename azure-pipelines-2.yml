@@ -16,4 +16,4 @@ steps:
     kubernetesServiceConnection: 'divman-default'
     strategy: 'canary'
     percentage: '50'
-    manifests: 'manifests/deploy_new.yaml'
+    manifests: 'deploy_new.yaml'
