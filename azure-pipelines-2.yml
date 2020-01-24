@@ -15,7 +15,5 @@ steps:
     action: 'deploy'
     kubernetesServiceConnection: 'divman-default'
     strategy: 'canary'
-    trafficSplitMethod: 'smi'
     percentage: '50'
-    baselineAndCanaryReplicas: '1'
     manifests: 'manifests/deploy_new.yaml'
