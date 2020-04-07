@@ -1,0 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: HelmDeploy@0
+  displayName: 'helm install'
+  inputs:
+    azureSubscription: 'RMDev (c00d16c7-6c1f-4c03-9be1-6934a4c49682)'
+    azureResourceGroup: divman
+    kubernetesCluster: divman
+    command: install
+    chartType: FilePath
+    chartPath: manifests/mychart.tgz
+    overrideValues: 'CONNECTION_STRING=("Server=tcp:asql-databasename-dev.database.windows.net,1433;Initial Catalog=dbPTDOI-DEV;User ID=username_dev;Password=password;Encrypt=True;TrustServerCertificate=False;'
