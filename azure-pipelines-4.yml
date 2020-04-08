@@ -19,4 +19,4 @@ steps:
     command: install
     chartType: FilePath
     chartPath: stable/cerebro
-    overrideValues: $(val)
+    overrideValues: 'key=$(val)'
