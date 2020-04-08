@@ -18,5 +18,5 @@ steps:
     kubernetesCluster: divman
     command: install
     chartType: FilePath
-    chartPath: manifests/mychart.tgz
+    chartPath: stable/airflow
     overrideValues: 'CONNECTION_STRING=("Server=tcp:asql-databasename-dev.database.windows.net,1433;Initial Catalog=dbPTDOI-DEV;User ID=username_dev;Password=password;Encrypt=True;TrustServerCertificate=False;'
