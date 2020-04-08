@@ -19,4 +19,4 @@ steps:
     command: install
     chartType: FilePath
     chartPath: stable/cerebro
-    overrideValues: 'CONNECTION_STRING=("Server=tcp:asql-databasename-dev.database.windows.net,1433;Initial Catalog=dbPTDOI-DEV;User ID=username_dev;Password=password;Encrypt=True;TrustServerCertificate=False;'
+    overrideValues: $(val)
