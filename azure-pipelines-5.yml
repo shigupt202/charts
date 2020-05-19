@@ -22,7 +22,7 @@ steps:
     command: 'install'
     chartType: 'FilePath'
     chartPath: 'stable/cerebro'
-    releaseName: 'release19mayv3'
+    releaseName: 'release19mayv4'
     waitForExecution: false
     failOnStderr: false
   
