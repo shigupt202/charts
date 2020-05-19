@@ -21,4 +21,4 @@ steps:
     command: 'install'
     chartType: 'FilePath'
     chartPath: 'stable/cerebro'
-    releaseName: 'release19May'
+    releaseName: 'release19may'
