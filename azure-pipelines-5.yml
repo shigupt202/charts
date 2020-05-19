@@ -15,6 +15,7 @@ steps:
     helmVersion: '2.14.1'
 
 - task: HelmDeploy@0
+  name: helmdep
   inputs:
     connectionType: 'Kubernetes Service Connection'
     kubernetesServiceConnection: 'divman-default'
@@ -24,3 +25,12 @@ steps:
     releaseName: 'release19mayv3'
     waitForExecution: false
     failOnStderr: false
+  
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo $(helmdep.helmOutput)
+
