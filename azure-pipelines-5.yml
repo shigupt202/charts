@@ -18,7 +18,7 @@ steps:
 - task: HelmDeploy@0
   inputs:
     connectionType: 'Kubernetes Service Connection'
-    kubernetesServiceConnection: 'testingdts'
+    kubernetesServiceConnection: 'divman-default'
     command: 'install'
     chartType: 'FilePath'
     chartPath: 'stable/cerebro'
