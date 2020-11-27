@@ -31,8 +31,8 @@ jobs:
         - task: HelmDeploy@0
           name: helmdep
           inputs:
-            connectionType: 'Kubernetes Service Connection'
-            kubernetesServiceConnection: 'divman-default'
+            # connectionType: 'Kubernetes Service Connection'
+            # kubernetesServiceConnection: 'divman-default'
             command: 'install'
             chartType: 'FilePath'
             chartPath: 'demo-chart-0.1.0.tgz'
