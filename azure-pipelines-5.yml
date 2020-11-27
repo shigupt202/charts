@@ -20,7 +20,7 @@ jobs:
       arguments: '-t testimg235'
       
 - deployment: Deploy
-  environment: 'shigupt202gotemp.something'
+  environment: 'shigupt.something'
   strategy:
     runOnce:
       deploy:
