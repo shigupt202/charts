@@ -39,7 +39,7 @@ jobs:
             connectionType: 'Azure Resource Manager'
             command: 'install'
             chartType: 'Name'
-            chartName: 'stable/cerebro'
+            chartName: 'stable/burrow'
             releaseName: 'release1Nov30'
             overrideValues: 'image.repository=testimg215'
             waitForExecution: false
