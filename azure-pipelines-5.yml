@@ -36,15 +36,13 @@ jobs:
         - task: HelmDeploy@0
           name: helmdep
           inputs:
-            # connectionType: 'Kubernetes Service Connection'
-            # kubernetesServiceConnection: 'divman-default'
+            connectionType: 'Azure Resource Manager'
             command: 'install'
-            chartType: 'FilePath'
-            chartPath: 'stable/cerebro'
+            chartType: 'Name'
+            chartName: 'stable/cerebro'
             releaseName: 'release1Nov30'
             overrideValues: 'image.repository=testimg215'
             waitForExecution: false
-            failOnStderr: false
 
 # - task: Bash@3
 #   inputs:
