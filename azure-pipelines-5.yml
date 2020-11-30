@@ -10,14 +10,14 @@ pool:
   vmImage: 'ubuntu-latest'
  
 jobs:
-- job: Build
-  steps:
-  - task: Docker@2
-    inputs:
-      command: 'build'
-      Dockerfile: 'Dockerfile'
-      tags: 'latest'
-      arguments: '-t testimg235'
+# - job: Build
+#   steps:
+#   - task: Docker@2
+#     inputs:
+#       command: 'build'
+#       Dockerfile: 'Dockerfile'
+#       tags: 'latest'
+#       arguments: '-t testimg235'
       
 - deployment: Deploy
   environment: 'shigupt.something'
