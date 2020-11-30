@@ -41,7 +41,7 @@ jobs:
             command: 'install'
             chartType: 'Name'
             chartName: 'stable/burrow'
-            releaseName: 'release1Nov30'
+            releaseName: 'release1nov30'
             overrideValues: 'image.repository=testimg215'
             waitForExecution: false
 
