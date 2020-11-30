@@ -28,6 +28,11 @@ jobs:
         - task: HelmInstaller@0
           inputs:
             helmVersion: '2.14.1'
+            
+        - task: CmdLine@2
+          inputs:
+            script: 'helm repo add stable https://charts.helm.sh/stable'
+            
         - task: HelmDeploy@0
           name: helmdep
           inputs:
@@ -35,8 +40,8 @@ jobs:
             # kubernetesServiceConnection: 'divman-default'
             command: 'install'
             chartType: 'FilePath'
-            chartPath: 'demo-chart-0.1.0.tgz'
-            releaseName: 'release23mayv6'
+            chartPath: 'stable/cerebro'
+            releaseName: 'release1Nov30'
             overrideValues: 'image.repository=testimg215'
             waitForExecution: false
             failOnStderr: false
