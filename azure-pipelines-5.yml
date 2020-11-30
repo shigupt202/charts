@@ -37,6 +37,7 @@ jobs:
           name: helmdep
           inputs:
             connectionType: 'Azure Resource Manager'
+            namespace: 'something'
             command: 'install'
             chartType: 'Name'
             chartName: 'stable/burrow'
