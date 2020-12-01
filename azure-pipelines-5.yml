@@ -39,8 +39,8 @@ jobs:
             connectionType: 'Azure Resource Manager'
             namespace: 'something'
             command: 'install'
-            chartType: 'Name'
-            chartName: 'stable/burrow'
+            chartType: 'FilePath'
+            chartPath: 'demo-chart1*'
             releaseName: 'release1nov30'
             overrideValues: 'image.repository=testimg215'
             waitForExecution: false
