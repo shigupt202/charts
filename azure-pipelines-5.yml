@@ -27,6 +27,7 @@ jobs:
       
 - deployment: Deploy
   environment: 'shigupt.something'
+  dependsOn: Build
   strategy:
     runOnce:
       deploy:
