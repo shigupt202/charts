@@ -10,14 +10,20 @@ pool:
   vmImage: 'ubuntu-latest'
  
 jobs:
-# - job: Build
-#   steps:
-#   - task: Docker@2
-#     inputs:
-#       command: 'build'
-#       Dockerfile: 'Dockerfile'
-#       tags: 'latest'
-#       arguments: '-t testimg235'
+- job: Build
+  steps:
+  # - task: Docker@2
+  #   inputs:
+  #     command: 'build'
+  #     Dockerfile: 'Dockerfile'
+  #     tags: 'latest'
+  #     arguments: '-t testimg235'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: demo-chart1.tar.gz
+      ArtifactName: 'drop'
+      publishLocation: 'FilePath'
+      TargetPath: '$(System.DefaultWorkingDirectory)'
       
 - deployment: Deploy
   environment: 'shigupt.something'
@@ -31,7 +37,7 @@ jobs:
             
         - task: CmdLine@2
           inputs:
-            script: 'helm repo add stable https://charts.helm.sh/stable'
+            script: 'ls'
             
         - task: HelmDeploy@0
           name: helmdep
@@ -40,7 +46,7 @@ jobs:
             namespace: 'something'
             command: 'install'
             chartType: 'FilePath'
-            chartPath: '$(Build.ArtifactStagingDirectory)/demo-chart1.tar.gz'
+            chartPath: 'demo-chart1*.gz'
             releaseName: 'release1nov30'
             overrideValues: 'image.repository=testimg215'
             waitForExecution: false
