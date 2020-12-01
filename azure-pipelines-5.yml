@@ -20,7 +20,7 @@ jobs:
   #     arguments: '-t testimg235'
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: demo-chart1.tar.gz
+      PathtoPublish: $(System.DefaultWorkingDirectory)/demo-chart1.tar.gz
       ArtifactName: 'drop'
       publishLocation: 'FilePath'
       TargetPath: '$(System.DefaultWorkingDirectory)'
