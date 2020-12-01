@@ -20,7 +20,7 @@ jobs:
   #     arguments: '-t testimg235'
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: $(Build.SourcesDirectory)/demo-chart1.tar.gz
+      PathtoPublish: $(Build.ArtifactStagingDirectory)
       ArtifactName: 'drop'
       publishLocation: 'FilePath'
       TargetPath: '$(System.DefaultWorkingDirectory)'
@@ -38,7 +38,9 @@ jobs:
             
         - task: CmdLine@2
           inputs:
-            script: 'ls'
+            script: |
+              cd $(System.DefaultWorkingDirectory)
+              ls
             
         - task: HelmDeploy@0
           name: helmdep
