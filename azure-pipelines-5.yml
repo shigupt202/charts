@@ -49,7 +49,7 @@ jobs:
             namespace: 'something'
             command: 'install'
             chartType: 'FilePath'
-            chartPath: 'demo-chart1*.gz'
+            chartPath: 'drop/demo-chart1*.gz'
             releaseName: 'release1nov30'
             overrideValues: 'image.repository=testimg215'
             waitForExecution: false
