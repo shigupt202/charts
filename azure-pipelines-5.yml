@@ -40,7 +40,7 @@ jobs:
             namespace: 'something'
             command: 'install'
             chartType: 'FilePath'
-            chartPath: 'demo-chart1*'
+            chartPath: 'demo-chart1.tar.gz'
             releaseName: 'release1nov30'
             overrideValues: 'image.repository=testimg215'
             waitForExecution: false
