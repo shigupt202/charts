@@ -1,4 +1,4 @@
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
@@ -10,5 +10,5 @@ jobs:
       with:
         renderEngine: 'helm'
         helmChart: './stable/cerebro/' 
-        helm-version: '2.11' 
+        helm-version: 'v2.11.1' 
       id: bake
