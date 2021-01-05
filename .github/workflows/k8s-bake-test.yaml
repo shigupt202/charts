@@ -10,5 +10,5 @@ jobs:
       with:
         renderEngine: 'helm'
         helmChart: './stable/cerebro/' 
-        helm-version: 'v2.11.1' 
+        helm-version: 'v2.16.7' 
       id: bake
