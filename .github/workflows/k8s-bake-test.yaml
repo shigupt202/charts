@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - uses: azure/k8s-bake@users/shigupt/fixHelmInitCommand
+      with:
+        renderEngine: 'helm'
+        helmChart: 'stable/cerebro' 
+        helm-version: 'v2.16.7' 
+      id: bake
