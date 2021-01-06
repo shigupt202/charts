@@ -9,6 +9,6 @@ jobs:
     - uses: azure/k8s-bake@users/shigupt/fixHelmInitCommand
       with:
         renderEngine: 'helm'
-        helmChart: './stable/cerebro/' 
+        helmChart: 'stable/cerebro' 
         helm-version: 'v2.16.7' 
       id: bake
