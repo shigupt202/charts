@@ -42,7 +42,7 @@ jobs:
             downloadType: 'single'
             artifactName: 'drop'
             downloadPath: '$(System.ArtifactsDirectory)'
-        - task: HelmInstaller@0
+        - task: HelmInstaller@0.
           inputs:
             helmVersion: '2.14.1'
         - task: CmdLine@2
@@ -52,7 +52,7 @@ jobs:
               ls
 
             
-        - task: HelmDeploy@0
+        - task: HelmDeploy@0.178.0
           name: helmdep
           inputs:
             connectionType: 'Azure Resource Manager'
