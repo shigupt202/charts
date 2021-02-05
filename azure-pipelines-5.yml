@@ -52,7 +52,7 @@ jobs:
               ls
 
             
-        - task: HelmDeploy@0.178.0
+        - task: HelmDeploy@0.180.0
           name: helmdep
           inputs:
             connectionType: 'Azure Resource Manager'
